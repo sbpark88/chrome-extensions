@@ -1,3 +1,22 @@
+<!-- TOC -->
+* [확장 프로그램에서 주로 사용하는 것은 브라우저에 Add-on 으로 추가된 API 다.](#확장-프로그램에서-주로-사용하는-것은-브라우저에-add-on-으로-추가된-api-다)
+    * [Manifest](#manifest)
+    * [Action](#action)
+    * [Content Scripts](#content-scripts)
+    * [Background - Service Worker](#background---service-worker)
+    * [Content Scripts 와 Background Service Worker 의 차이](#content-scripts-와-background-service-worker-의-차이)
+    * [Content Scripts 와 Background Service Worker 의 공통점](#content-scripts-와-background-service-worker-의-공통점)
+* [Module Scripts](#module-scripts)
+* [사용자 데이터 보호](#사용자-데이터-보호)
+* [선택적 권한](#선택적-권한)
+* [1. Hello World](#1-hello-world)
+* [2. 모든 페이지에서 스크립트 실행](#2-모든-페이지에서-스크립트-실행)
+* [3. 활성 탭에 스크립트 삽입](#3-활성-탭에-스크립트-삽입)
+* [4. 서비스 워커로 이벤트 처리](#4-서비스-워커로-이벤트-처리)
+* [5. 탭 관리](#5-탭-관리)
+* [6. 디버그 확장 프로그램](#6-디버그-확장-프로그램)
+<!-- TOC -->
+
 # 확장 프로그램에서 주로 사용하는 것은 브라우저에 Add-on 으로 추가된 API 다.
 
 크롬에서만 사용 가능한 API 도 일부 있지만 대부분의 API 는 브라우저가 공통으로 지원하는 `Add-ons`다. 따라서
@@ -140,18 +159,14 @@ Content Scripts, Service Worker, Action 의 `default_popup` HTML 페이지에서
 
 ---
 
-# 크롬 확장 프로그램 튜토리얼 1
-
-### [Hello World]
+# 1. [Hello World]
 
 아무런 고급 기능을 사용하지 않은 최소한의 hello world 샘플로, `manifest.json`의 필수 요소를 작성하는 방법과,
 `HTML`과 `JavaScript`가 어떻게 확장 프로그램의 페이지를 만들어내는지를 알아본다.
 
 ---
 
-# 크롬 확장 프로그램 튜토리얼 2
-
-### [모든 페이지에서 스크립트 실행]
+# 2. [모든 페이지에서 스크립트 실행]
 
 `https://developer.chrome.com/docs/extensions/*`, `https://developer.chrome.com/docs/webstore/*`
 하위 페이지를 새로고침 할 경우, 문서를 읽는데 소요되는 시간을 DOM 에 표시하는 예제를 통해 확장 프로그램이 `DOM 을 읽고 조작`하는
@@ -162,9 +177,7 @@ Content Scripts, Service Worker, Action 의 `default_popup` HTML 페이지에서
 
 ---
 
-# 크롬 확장 프로그램 튜토리얼 3
-
-### [활성 탭에 스크립트 삽입]
+# 3. [활성 탭에 스크립트 삽입]
 
 CSS 를 사용해 '읽기 도구(focus-mode)' 효과를 내는 기능을 구현하고 사용자의 클릭에 의해 작동하도록 하는 `action`과
 이 `action`을 단축키로 활성화 시키는 방법에 대해 다룬다.
@@ -190,9 +203,7 @@ CSS 를 사용해 '읽기 도구(focus-mode)' 효과를 내는 기능을 구현�
 
 ---
 
-# 크롬 확장 프로그램 튜토리얼 4
-
-### [서비스 워커로 이벤트 처리]
+# 4. [서비스 워커로 이벤트 처리]
 
 이 예제에는 `Service Worker`를 사용하는 데, `sw-omnibox`는 주소 표시줄을 이용해 특정 키워드를 입력 후 해당 엔진 안에서
 검색할 수 있는 기능이고, `sw-tips`는 구글 확장에서 팁을 받아와 그 중 하나를 골라 알람을 보내고, `content_scripts`가
@@ -222,9 +233,7 @@ CSS 를 사용해 '읽기 도구(focus-mode)' 효과를 내는 기능을 구현�
 
 ---
 
-# 크롬 확장 프로그램 튜토리얼 5
-
-### [탭 관리]
+# 5. [탭 관리]
 
 `action`의 `default_popup`을 통해 툴바 아이콘을 클릭했을 때 보이는 팝업 페이지를 열 수 있다. 팝업은 웹페이지와 비슷하지만
 인라인 JavaScript 를 실행할 수 없다는 한 가지 예외가 있다.
@@ -234,9 +243,7 @@ CSS 를 사용해 '읽기 도구(focus-mode)' 효과를 내는 기능을 구현�
 
 ---
 
-# 크롬 확장 프로그램 튜토리얼 6
-
-### [디버그 확장 프로그램]
+# 6. [디버그 확장 프로그램]
 
 각 기능의 디버깅 방법을 설명하는 튜토리얼이다.
 
